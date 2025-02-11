@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=#">
+    <title>Redirecionando...</title>
+    <script>
+        // Lista de números de WhatsApp com a nova mensagem pré-definida
+        var contatos = [
+            "https://wa.me/5581986329853?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20Grupo%20de%20Atacado!",
+            "https://wa.me/5581997851912?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20Grupo%20de%20Atacado!",
+            "https://wa.me/5581996815186?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20Grupo%20de%20Atacado!",
+        ];
+        
+        // Recupera o último índice salvo no localStorage
+        var lastIndex = localStorage.getItem("lastContactIndex");
+        lastIndex = lastIndex ? parseInt(lastIndex) : -1;
+        
+        // Escolhe o próximo contato na sequência
+        var nextIndex = (lastIndex + 1) % contatos.length;
+        
+        // Salva o novo índice para a próxima visita
+        localStorage.setItem("lastContactIndex", nextIndex);
+        
+        // Redireciona para o contato escolhido
+        window.location.href = contatos[nextIndex];
+    </script>
+</head>
+<body>
+    <p>Se não for redirecionado automaticamente, <a href="#" id="manualLink">clique aqui</a>.</p>
+    <script>
+        document.getElementById("manualLink").href = contatos[nextIndex];
+    </script>
+</body>
+</html>
