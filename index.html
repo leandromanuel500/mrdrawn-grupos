@@ -5,24 +5,15 @@
     <meta http-equiv="refresh" content="0; url=#">
     <title>Redirecionando...</title>
     <script>
-        // Lista de números de WhatsApp com a nova mensagem pré-definida
-        var contatos = [
-            "https://wa.me/5581986329853?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20Grupo%20de%20Atacado!",
-            "https://wa.me/5581997851912?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20Grupo%20de%20Atacado!",
-            "https://wa.me/5581996815186?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20Grupo%20de%20Atacado!",
-        ];
-        
-        // Seleciona um contato aleatoriamente
-        var randomIndex = Math.floor(Math.random() * contatos.length);
-        
-        // Redireciona para o contato escolhido aleatoriamente
-        window.location.href = contatos[randomIndex];
+
+        // Redireciona para o grupo
+        window.location.href = "https://api-mrdrawn-grupos.vercel.app/api/whatsapp";
     </script>
 </head>
 <body>
     <p>Se não for redirecionado automaticamente, <a href="#" id="manualLink">clique aqui</a>.</p>
     <script>
-        document.getElementById("manualLink").href = contatos[randomIndex];
+        document.getElementById("manualLink").href = "https://api-mrdraw-contatos.vercel.app/api/whatsapp";
     </script>
 </body>
 </html>
